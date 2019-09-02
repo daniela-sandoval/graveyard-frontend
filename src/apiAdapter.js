@@ -12,16 +12,16 @@ class ApiAdapter {
       },
       body: JSON.stringify(currentUser)
     }
-    return fetch("http://localhost:3000/users", config)
+    return fetch("https://graveyard-app-api.herokuapp.com/users", config)
       .then(rsp => rsp.json())
   }
 
   static fetchStories() {
-    return fetch("http://localhost:3000/stories")
+    return fetch("https://graveyard-app-api.herokuapp.com/stories")
   }
 
   static fetchOneStory(id) {
-    return fetch(`http://localhost:3000/stories/${id}`)
+    return fetch(`https://graveyard-app-api.herokuapp.com/stories/${id}`)
       .then(rsp => rsp.json())
   }
 
@@ -37,11 +37,11 @@ class ApiAdapter {
       },
       body: JSON.stringify(search)
     }
-    return fetch("http://localhost:3000/search", config)
+    return fetch("https://graveyard-app-api.herokuapp.com/search", config)
       .then(rsp => rsp.json())
   }
   static getTags(){
-    return fetch(`http://localhost:3000/tags`)
+    return fetch(`https://graveyard-app-api.herokuapp.com/tags`)
       .then(rsp => rsp.json())
   }
 
@@ -60,7 +60,7 @@ class ApiAdapter {
       },
       body: JSON.stringify(newStory)
     }
-    return fetch("http://localhost:3000/stories", config)
+    return fetch("https://graveyard-app-api.herokuapp.com/stories", config)
       .then(rsp => rsp.json())
   }
   static likeStory(){
@@ -76,7 +76,7 @@ class ApiAdapter {
       },
       body: JSON.stringify(newStory)
     }
-    return fetch("http://localhost:3000/likes", config)
+    return fetch("https://graveyard-app-api.herokuapp.com/likes", config)
       .then(rsp => rsp.json())
   }
   static commentStory(comment){
@@ -93,7 +93,7 @@ class ApiAdapter {
       },
       body: JSON.stringify(newStory)
     }
-    return fetch("http://localhost:3000/comments", config)
+    return fetch("https://graveyard-app-api.herokuapp.com/comments", config)
       .then(rsp => rsp.json())
   }
   static deleteStory(){
@@ -102,7 +102,7 @@ class ApiAdapter {
     let config = {
       method: "DELETE"
     }
-    fetch(`http://localhost:3000/stories/${id}`, config)
+    fetch(`https://graveyard-app-api.herokuapp.com/stories/${id}`, config)
       .then(rsp => rsp.json())
       .then(Utility.removeStone)
   }
@@ -118,7 +118,7 @@ class ApiAdapter {
       },
       body: JSON.stringify(filter)
     }
-    return fetch("http://localhost:3000/filter", config)
+    return fetch("https://graveyard-app-api.herokuapp.com/filter", config)
       .then(rsp => rsp.json())
   }
 }
